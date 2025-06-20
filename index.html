@@ -3,94 +3,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Milano Aluminum</title>
+  <title>Milano Aluminum Factory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
+    body {
+      display: flex;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    nav {
+      width: 200px;
+      background-color: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding: 20px;
       box-sizing: border-box;
     }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #2c3e50;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #1e2a38;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
-    }
-    .content {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    .content img {
-      max-width: 200px;
+    nav h2 {
+      font-size: 20px;
       margin-bottom: 20px;
     }
-    .content h2 {
-      color: #1e2a38;
-      margin-bottom: 15px;
-    }
-    .content p {
-      color: #555;
-      font-size: 1.1em;
-    }
-    .cta {
-      margin-top: 30px;
-    }
-    .cta a {
-      background-color: #25D366;
+    nav a {
+      display: block;
       color: white;
-      padding: 12px 25px;
-      border-radius: 5px;
       text-decoration: none;
-      font-size: 1em;
-      font-weight: bold;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+    .slider {
+      max-width: 100%;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .slider img {
+      width: 100%;
+      max-height: 300px;
+      display: none;
+    }
+    .slider img.active {
+      display: block;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    p, li {
+      color: #333;
+      line-height: 1.6;
     }
     footer {
-      background-color: #1e2a38;
-      color: white;
-      text-align: center;
-      padding: 15px;
       margin-top: 40px;
+      font-size: 14px;
+    }
+    .contact a {
+      display: block;
+      margin: 5px 0;
+      color: #2980b9;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Milano Aluminum</h1>
-    <p>High-Precision Aluminum Casting & Export</p>
-  </header>
-
-  <section class="content">
-    <img src="logo.png" alt="Milano Aluminum Logo">
-    <h2>Who We Are</h2>
-    <p>
-      Milano Aluminum is a leading factory in casting, smelting, and exporting premium-grade aluminum products across Europe, Asia, and the Middle East. We pride ourselves on precision, sustainability, and world-class service.
-    </p>
-    <div class="cta">
-      <a href="https://wa.me/201003724543" target="_blank">Contact Us via WhatsApp</a>
+  <nav>
+    <h2>Milano Menu</h2>
+    <a href="#">🏠 Home</a>
+    <a href="#">ℹ️ About Us</a>
+    <a href="#">☎️ Contact Us</a>
+  </nav>
+  <div class="main">
+    <div class="slider">
+      <img src="aluminum1.jpg" class="active" alt="Aluminum Mold at Factory">
+      <img src="aluminum2.jpg" alt="Aluminum Shipping">
+      <img src="aluminum3.jpg" alt="Aluminum Molds Only">
     </div>
-  </section>
 
-  <footer>
-    &copy; 2025 Milano Aluminum. All rights reserved.
-  </footer>
+    <section>
+      <h2>About Our Factory</h2>
+      <p>Milano Aluminum is a professional aluminum casting and export factory based in Egypt, serving clients worldwide with precision, speed, and quality.</p>
+    </section>
 
+    <section>
+      <h2>Our Export History</h2>
+      <p>We have proudly exported to over <strong>1,000 companies</strong> around the world with professionalism and consistency.</p>
+    </section>
+
+    <section>
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>✅ Fast order processing and delivery</li>
+        <li>✅ High-quality aluminum molds and casting</li>
+        <li>✅ Competitive pricing for global markets</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>📞 Phone: <a href="tel:+201003724543">0201003724543</a></p>
+      <p>📧 Email: <a href="mailto:info@milanoaluminum.com">info@milanoaluminum.com</a></p>
+      <p>🌐 Facebook: <a href="https://www.facebook.com/share/1CinEHJ1dS/" target="_blank">Visit our page</a></p>
+      <p>We respond to all email inquiries within <strong>24 hours</strong>.</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Milano Aluminum. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slider img");
+    setInterval(() => {
+      slides[slideIndex].classList.remove("active");
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }, 3000);
+  </script>
 </body>
 </html>
