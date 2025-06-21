@@ -1,88 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Milano Aluminum Factory</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milano Aluminum Factory</title>
   <style>
-    body {
-      display: flex;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-    nav {
-      width: 200px;
-      background-color: #2c3e50;
-      color: white;
-      height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    nav h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    nav a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 10px 0;
-      font-size: 16px;
-    }
-    .main {
-      flex: 1;
-      padding: 20px;
-    }
-    .slider {
-      max-width: 100%;
-      position: relative;
-      margin-bottom: 20px;
-    }
-    .slider img {
-      width: 100%;
-      max-height: 300px;
-      display: none;
-    }
-    .slider img.active {
-      display: block;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-    p, li {
-      color: #333;
-      line-height: 1.6;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-    }
-    .contact a {
-      display: block;
-      margin: 5px 0;
-      color: #2980b9;
-      text-decoration: none;
-    }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f2f2f2; color: #333; }
+    header { background: #003366; color: white; padding: 1rem; text-align: center; }
+    nav { background: #004080; color: white; padding: 1rem; width: 200px; float: left; height: 100vh; box-sizing: border-box; }
+    nav a { display: block; color: white; text-decoration: none; margin: 10px 0; }
+    main { margin-left: 200px; padding: 1rem; }
+    .slider { width: 100%; max-width: 800px; margin: auto; overflow: hidden; position: relative; }
+    .slider img { width: 100%; display: none; }
+    .slider img.active { display: block; }
+    section { margin: 2rem 0; }
+    footer { background: #003366; color: white; padding: 1rem; text-align: center; margin-top: 2rem; }
+    .contact a { color: #0066cc; display: block; margin: 0.5rem 0; }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Milano Aluminum Factory</h1>
+    <p>Professional Aluminum Casting & Export - Based in Egypt</p>
+  </header>
   <nav>
-    <h2>Milano Menu</h2>
     <a href="#">🏠 Home</a>
     <a href="#">ℹ️ About Us</a>
     <a href="#">☎️ Contact Us</a>
   </nav>
-  <div class="main">
+  <main>
     <div class="slider">
-      <img src="aluminum1.jpg" class="active" alt="Aluminum Mold at Factory">
-      <img src="aluminum2.jpg" alt="Aluminum Shipping">
-      <img src="aluminum3.jpg" alt="Aluminum Molds Only">
+      <img src="aluminum1.jpg" alt="Mold at Factory" class="active">
+      <img src="aluminum2.jpg" alt="Shipping">
+      <img src="aluminum3.jpg" alt="Individual Molds">
     </div>
 
     <section>
@@ -92,15 +42,15 @@
 
     <section>
       <h2>Our Export History</h2>
-      <p>We have proudly exported to over <strong>1,000 companies</strong> around the world with professionalism and consistency.</p>
+      <p>We have proudly exported aluminum molds and castings to over <strong>1,000 companies</strong> worldwide, known for professionalism and reliability.</p>
     </section>
 
     <section>
       <h2>Why Choose Us?</h2>
       <ul>
-        <li>✅ Fast order processing and delivery</li>
-        <li>✅ High-quality aluminum molds and casting</li>
-        <li>✅ Competitive pricing for global markets</li>
+        <li>✅ Fast delivery and processing</li>
+        <li>✅ Excellent product quality</li>
+        <li>✅ Competitive pricing</li>
       </ul>
     </section>
 
@@ -109,21 +59,20 @@
       <p>📞 Phone: <a href="tel:+201003724543">0201003724543</a></p>
       <p>📧 Email: <a href="mailto:info@milanoaluminum.com">info@milanoaluminum.com</a></p>
       <p>🌐 Facebook: <a href="https://www.facebook.com/share/1CinEHJ1dS/" target="_blank">Visit our page</a></p>
-      <p>We respond to all email inquiries within <strong>24 hours</strong>.</p>
+      <p>We respond to all inquiries within <strong>24 hours</strong>.</p>
     </section>
-
-    <footer>
-      &copy; 2025 Milano Aluminum. All rights reserved.
-    </footer>
-  </div>
+  </main>
+  <footer>
+    &copy; 2025 Milano Aluminum. All rights reserved.
+  </footer>
 
   <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slider img");
+    let i = 0;
+    const images = document.querySelectorAll(".slider img");
     setInterval(() => {
-      slides[slideIndex].classList.remove("active");
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add("active");
+      images[i].classList.remove("active");
+      i = (i + 1) % images.length;
+      images[i].classList.add("active");
     }, 3000);
   </script>
 </body>
